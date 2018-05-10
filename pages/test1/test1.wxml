@@ -1,0 +1,9 @@
+<view>
+  <image src="{{isPlayingMusic.videoImgs.defImg}}" bindtap="playMusic"></image>
+  <audio poster="{{isPlayingMusic.videoImgs.defImg}}" src="{{isPlayingMusic.videoInfo.dataUrl}}" id="myAudio" loop>
+  </audio>
+</view>
+
+
+
+<!-- <image src="{{isPlayingMusic.coverImgUrl1}}" class="slide-image" style="width: 250px;" bindtap='playmusic' bindload="playmusic" /> -->

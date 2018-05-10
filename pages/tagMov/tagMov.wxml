@@ -1,0 +1,22 @@
+<import src="../common/list_item" />
+<import src="../common/loading" />
+
+<view class="tagShow">
+  <view>
+    <text class="tag_tit">{{title}}</text>
+    <view class="tags_list">
+      <view class="tag_mov" wx:for-item="detail" wx:key="index" wx:for="{{movieList}}">
+        <navigator url="../detail/detail?id={{detail.id}}">
+          <template is="normal" data="{{state,item,detail}}" />
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 加载中 -->
+    <template is="item_load" wx:if="{{true}}" data="{{state}}" />
+  </view>
+
+  <!-- loading -->
+  <template wx:if="{{state.loading}}" is="loading_circle" />
+
+</view>

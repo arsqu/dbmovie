@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#05B512",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "电影榜单",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

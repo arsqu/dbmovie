@@ -1,0 +1,42 @@
+<!-- 搜索列表 -->
+<template name="items_1">
+  <view class="sch_item" wx:for-item="list" wx:for="{{movieList}}" wx:key="index">
+    <view class="search_val">
+      <navigator url="../detail/detail?id={{list.id}}">
+        <view class="sch_list">
+          <view>
+            <image class="sch_pto" src="{{list.images.medium}}"></image>
+          </view>
+          <view class="sch_intro">
+            <text>{{list.title}}</text>
+            <text class="mov_date">{{list.original_title}} ( {{list.year}} )</text>
+            <!-- <text>导演:</text> -->
+            <text class="mov_author">
+              <text>导演:</text>
+            <text class="mov_author">
+              <block wx:if="{{list.directors.length!==0}}">
+                  <block wx:for="{{list.directors}}" wx:key="index">
+                    <text>{{item.name}}<text wx:if="{{index!=list.directors.length-1}}"> / </text></text>
+            </block>
+            </block>
+            <block wx:else>
+              <text>暂无作者信息</text>
+            </block>
+            </text>
+            </text>
+          </view>
+          <view>
+            <view class="sch_point">
+              <view class="p_col" wx:if="{{list.rating.average!=0}}">
+                {{list.rating.average}}
+              </view>
+              <view class="p_def" wx:else>
+                暂无
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</template>

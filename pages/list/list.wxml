@@ -1,0 +1,54 @@
+<import src="../common/list_item" />
+<import src="../common/loading" />
+
+<!-- 轮播图 -->
+<view class="swiper">
+  <swiper indicator-dots="true" autoplay="3500" class="hot_movies">
+    <block wx:for="{{allMovies[1].movies}}" wx:key="index">
+      <swiper-item wx:if="{{index<5}}">
+        <image src="{{item.images.large}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- loading -->
+<template wx:if="{{state.show}}" is="loading_circle" />
+
+<!-- 展示列表 -->
+<block wx:if="{{!state.show}}">
+
+  <view class="nav_list">
+    <view class="section section_gap" wx:for="{{allMovies}}" wx:key="index">
+      <view class="nav_movie">
+        <view class="tit_sec">
+          <text class="section__title">{{item.title}}</text>
+          <text wx:if="{{item.key!='weekly'}}" class="look_more" data-idx="{{index}}" bindtap="target_href"></text>
+        </view>
+        <scroll-view class="scroll-view_H" scroll-x>
+          <view class="scroll_list_1">
+            <navigator url="../detail/detail?id={{detail.id}}" wx:for="{{item.movies}}" wx:key="index" wx:for-item="detail">
+              <!-- <view>{{detail.rating.stars!=00}}</view> -->
+              <template is="normal" data="{{detail,item,state}}" />
+            </navigator>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<!-- 分类浏览 -->
+<view class="preview_tag" wx:if="{{!state.show}}">
+  <view class="type_view">
+    <text>分类浏览</text>
+    <view class="tagList">
+      <block wx:key="index" wx:for='{{tags}}'>
+        <view bindtap="target_href" data-key="{{item}}">
+          <text>{{item}}</text>
+          <image wx:if="{{item}}" class="arr_rt" src="/images/arrowright.png"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+@import '../list/list.wxss';
+@import '../search/search.wxss';
+
+.tag_tit{
+  padding:40rpx 35rpx;
+  display:inline-block;
+}
+
+.tags_list{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.tag_mov {
+  width: 200rpx;
+  margin: 10rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag_mov .scroll-view-item_H{
+  width:200rpx;
+  margin:0;
+}
+
+.tag_mov .scroll-view-item_H text {
+  font-size: 23rpx;
+}
+
+.point_box{
+  text-align:center;
+  color:#333;
+}
+
+.mov_point{
+  padding-left:5rpx;
+}

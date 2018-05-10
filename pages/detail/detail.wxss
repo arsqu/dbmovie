@@ -1,0 +1,303 @@
+.detail_intro {
+  width: 80%;
+  margin: 0 auto;
+  padding: 60rpx 40rpx;
+  font-size: 28rpx;
+}
+
+.banner_detail {
+  height: 800rpx;
+  width: 100%;
+}
+
+.pad {
+  padding: 20rpx;
+  color: #333;
+}
+
+.banner_intro>text {
+  display: block;
+  text-align: left;
+}
+
+.banner_intro>text:first-child {
+  font-size: 40rpx;
+  color: #666;
+  margin-top: 10rpx;
+  text-align: center;
+}
+
+.mar-t {
+  margin-top: 20rpx;
+}
+
+.banner_desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.banner_desc text:first-child {
+  font-size: 30rpx;
+  display: block;
+  margin-top: 35rpx;
+}
+
+.banner_desc .summary_desc {
+  font-size: 28rpx;
+}
+
+.summary_more {
+  font-size: 27rpx;
+  color: #05b512;
+  text-align: center;
+  padding: 10rpx 0;
+  cursor: pointer;
+  border-bottom: 1rpx solid #eee;
+}
+
+.banner_desc.def {
+  display: block;
+}
+
+.pto_show {
+  margin-bottom: 35rpx;
+}
+
+.pto_show .pto_tit {
+  margin-bottom: 15rpx;
+}
+
+.user_talk .pto_tit {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15rpx;
+}
+
+.pto_show scrollView {
+  height: 250rpx;
+  width: autp;
+}
+
+.pto_intro {
+  display: flex;
+  flex-direction: row;
+}
+
+.author_name {
+  text-align: center;
+  white-space: wrap;
+  font-size: 28rpx;
+  display: block;
+}
+
+.pto_tit {
+  font-size: 30rpx;
+  color: #aaa;
+  display: flex;
+}
+
+.pto_tit>text:first-child {
+  flex: 1;
+}
+
+.talk_more text:first-child {
+  font-size: 25rpx;
+}
+
+.pto_scroll {
+  margin: 0 5rpx;
+}
+
+.pto_actor .pto_scroll {
+  width: 240rpx;
+  height: 280rpx;
+}
+
+.pto_latest .pto_intro>view {
+  height: 280rpx;
+}
+
+.pto_latest image {
+  width: 220px;
+  height: 100%;
+}
+
+.pto_author .pto_scroll {
+  width: 180rpx;
+  margin: 0 10rpx;
+  flex-direction: column;
+}
+
+.mov_point {
+  display: flex;
+  flex-direction: row;
+}
+
+.tagList {
+  white-space: word-wrap;
+  word-wrap: break-word;
+  word-break: normal;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mov_tags {
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  background: #f5f5f5;
+  padding: 10rpx 15rpx;
+  margin: 8rpx 15rpx;
+  display: inline-block;
+}
+
+.btn_Cont {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn_Cont>button {
+  width: 50%;
+  margin: 10rpx;
+  background: transparent;
+  border: 1px solid #ffb712;
+  color: #ffb712;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+
+/*评论*/
+
+.talk_list {
+  padding: 5rpx 3rpx;
+}
+
+.s_det_pto>image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+}
+
+.look_more {
+  margin: 0 5rpx;
+}
+
+.s_det {
+  display: flex;
+}
+
+.s_det_t {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30rpx;
+  margin-bottom: 40rpx;
+  width: 100%;
+}
+
+.s_det_name {
+  font-size: 28rpx;
+  flex: 1;
+  color: #666;
+}
+
+.s_det_content {
+  font-size: 30rpx;
+}
+
+.def .s_det_pto>image {
+  background: #eee;
+}
+
+.def .s_det_name {
+  background: #eee;
+  height: 20rpx;
+  display: inline-block;
+  width: 25%;
+}
+
+.def .s_det_content {
+  background: #eee;
+  display: inline-block;
+  height: 25rpx;
+  width: 90%;
+}
+
+.def .s_det_date {
+  width: 30%;
+  background: #eee;
+  height: 10rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+
+.s_det_t view:last-child {
+  text-align: right;
+}
+
+.s_det_date {
+  font-size: 25rpx;
+  display: block;
+  text-align: right;
+  padding-top: 10rpx;
+}
+
+.talk_item .s_det:last-child .s_det_t {
+  margin-bottom: 1rpx;
+  border-bottom: 0 none;
+}
+
+.s_det_star {
+  display: flex;
+  align-items: center;
+  padding-right: 10rpx;
+}
+
+.s_det_star>text:first-child {
+  flex: 1;
+}
+
+.talk_lists .short_more {
+  text-align: center;
+  font-size: 28rpx;
+  color: #05b512;
+  border-top: 1px solid #ddd;
+  padding-top: 15rpx;
+  padding-bottom: 10rpx;
+}
+
+.talk_item>view {
+  padding: 8rpx;
+}
+
+.talk_item>.l_det {
+  padding: 15rpx;
+}
+
+.talk_item .l_det>view {
+  padding: 8rpx 0;
+}
+
+.l_talk_tit {
+  font-size: 30rpx;
+}
+
+.l_det_star {
+  margin-left: 10rpx;
+}
+
+.l_talk_user {
+  font-size: 25rpx;
+  color: #555;
+}
+
+.l_talk_desc {
+  color: #999;
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

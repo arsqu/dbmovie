@@ -1,0 +1,8 @@
+<view class="container splash">
+  <swiper indicator-dots="true" class="splash_swiper" >
+    <swiper-item class="swiper-items" wx:for="{{movies}}" wx:key="{{index}}">
+      <image src="{{item.images.large}}" class="slide-image" mode="aspectFill" />
+      <button catchtap="enterPage" wx:if="{{index>1}}" class="s_btn">进入首页</button>
+    </swiper-item>
+  </swiper>
+</view>

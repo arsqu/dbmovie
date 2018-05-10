@@ -1,0 +1,137 @@
+<import src="../common/loading" />
+<import src="../common/list_item" />
+
+<!-- loading -->
+<template is="loading_circle" wx:if="{{state.show}}" />
+
+<view wx:if="{{!state.show}}">
+  <view class="detail_intro">
+    <view>
+      <image class="banner_detail" src="{{detail.images.large}}" mode="aspectFit"></image>
+    </view>
+    <view class="pad">
+      <view class="banner_intro">
+        <text>{{detail.title}}({{detail.year}})</text>
+        <text class="mar-t">导演: <block wx:for="{{detail.directors}}" wx:key="index">{{item.name}}</block></text>
+        <text class="mar-t">主演: <block wx:for="{{detail.casts}}" wx:key="index">{{item.name}} <block wx:if="{{index!=detail.casts.length-1}}">/ </block>  </block>
+        </text>
+        <text class="mar-t">类型: <block wx:for="{{detail.genres}}" wx:key="index">{{item}} <block wx:if="{{index!=detail.genres.length-1}}">/ </block> </block></text>
+        <text class="mar-t mov_point">
+          <text>评分: {{detail.rating.average}} </text>
+        <text wx:if="{{detail.rating.average!=='暂无'}}" class="movie_star">
+            <template is="point" data="{{detail}}"/>
+          </text>
+        </text>
+
+      </view>
+
+      <!-- 暂无功能 -->
+      <view class="btn_Cont">
+        <button>想看</button>
+        <button>看过</button>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class="pad">
+
+    <view class="pto_show">
+      
+      <view class="banner_desc {{state.summary?'def':''}}">
+        <view class="pto_tit">剧情简介:</view>
+        <text class="summary_desc" decode="{{true}}" data-content="{{detail.summary}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{detail.summary}}
+        </text>
+      </view>
+      <view class="summary_more {{state.summary?'hide':''}}" ontap="summaryMore">更多</view>
+
+    </view>
+
+    <!--  pto_author -->
+    <view class="pto_show">
+
+      <view class="pto_tit">影人:</view>
+      <scroll-view scroll-x>
+        <view class="pto_intro pto_actor">
+          <view wx:for="{{infos.author}}" wx:key="index">
+            <image mode="aspectFill" data-src="{{item}}" bindtap="previewImg" binderror="errorImg" class="pto_scroll" src="{{item.avatars.small?item.avatars.small:'/images/default_pic.png'}}"></image>
+            <text class="author_name">{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+
+    </view>
+
+    <view class="pto_show">
+
+      <view class="pto_tit">查看更多高分电影电视剧</view>
+      <view class="tagList">
+        <block wx:for="{{infos.tags}}" wx:key="index">
+          <navigator url="../tagMov/tagMov?tag={{item}}">
+            <text class="mov_tags">{{item}}</text>
+          </navigator>
+        </block>
+      </view>
+
+    </view>
+
+    <view class="pto_show">
+
+      <view class="pto_tit">图片和预告片</view>
+      <scroll-view scroll-x class="pto_latest">
+        <view class="pto_intro">
+          <view wx:for="{{infos.photos}}" wx:key="{{index}}">
+            <image class="pto_scroll" src="{{item.thumb}}"></image>
+          </view>
+        </view>
+      </scroll-view>
+
+    </view>
+
+    <view class="pto_show">
+      <view class="pto_tit">
+        <text>用户短评</text>
+        <navigator url="../lookMore/lookMore?id={{detail.id}}&type=comments">
+          <text class="talk_more">
+            <text>更多</text>
+          <text class="look_more"></text>
+          </text>
+        </navigator>
+      </view>
+      <view class="talk_lists">
+        <view class="talk_item">
+          <template is="short_talk" data="{{detail,state}}" />
+        </view>
+        <navigator url="../lookMore/lookMore?id={{detail.id}}&type=comments">
+          <view class="short_more">查看全部短评</view>
+        </navigator>
+      </view>
+
+    </view>
+
+    <view class="pto_show">
+
+      <view class="pto_tit">
+        <text>用户影评</text>
+        <navigator url="../lookMore/lookMore?id={{detail.id}}&type=reviews">
+          <text class="talk_more">
+            <text>更多</text>
+          <text class="look_more"></text>
+          </text>
+        </navigator>
+      </view>
+      <view class="talk_lists">
+        <view class="talk_item">
+          <template is="long_talk" data="{{detail,state}}" />
+        </view>
+        <navigator url="../lookMore/lookMore?id={{detail.id}}&type=reviews">
+          <view class="short_more">查看全部长评</view>
+        </navigator>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>

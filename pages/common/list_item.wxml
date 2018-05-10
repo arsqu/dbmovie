@@ -1,0 +1,82 @@
+<!-- 列表 -->
+<template name="normal">
+  <view class="scroll-view-item_H">
+    <image src="{{detail.images.large}}" class="slide-image" mode="aspectFill" />
+    <text>{{detail.title}}</text>
+    <!-- <view>{{item.key}}</view> -->
+    <view class="point_box" wx:if="{{item.key!=='coming_soon'}}">
+      <text class="movie_star">
+        <template is="point" data="{{detail,state}}"/>
+      </text>
+      <text wx:if="{{state.point}}" class="mov_point"> {{detail.rating.average}}</text>
+    </view>
+  </view>
+</template>
+
+<!-- 分数 -->
+<template name="point">
+  <block wx:if="{{detail.rating.stars!=00||state.pointTit}}">
+    <block wx:key="index" wx:for="{{[10,20,30,40,50]}}">
+      <block wx:if="{{detail.rating.stars>=item}}">
+        <text class="color_star"></text>
+      </block>
+      <block wx:else>
+        <block wx:if="{{item-detail.rating.stars<=5}}">
+          <text class="half_star"></text>
+        </block>
+        <block wx:else>
+          <text class="gray_star"></text>
+        </block>
+      </block>
+    </block>
+  </block>
+  <block wx:else>
+    <text>暂无评分</text>
+  </block>
+
+</template>
+
+<!-- 短评 -->
+<template name="short_talk">
+  <block wx:for="{{detail.popular_comments}}" wx:for-item="detail" wx:key="index">
+    <view class="s_det">
+      <view class="s_det_pto">
+        <image src="{{detail.author.avatar}}"></image>
+      </view>
+      <view class="s_det_t movie_star">
+        <view class="s_det_star">
+          <text>
+            <text class="s_det_name">{{detail.author.name}}</text>
+          </text>
+          <text class="s_det_star">
+            <template is="point" data="{{detail,state}}"/> 
+          </text>
+        </view>
+        <view>
+          <text class="s_det_content">{{detail.content}}</text>
+        </view>
+        <view>
+          <text class="s_det_date">{{detail.created_at}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</template>
+
+<!-- 影评 -->
+<template name="long_talk">
+  <block wx:for="{{detail.popular_reviews}}" wx:for-item="detail" wx:key="index">
+    <view class="l_det" wx:if="{{state.longTalk.lens?index<state.longTalk.lens:true}}">
+      <view class="l_talk_tit">{{detail.title}}</view>
+      <view class="l_talk_user movie_star">
+        <text>{{detail.author.name}}</text>
+        <text class="l_det_star">
+          <template is="point" data="{{detail}}" />
+        </text>
+      </view>
+      <view class="l_talk_desc">
+        <text>{{detail.summary}}</text>
+      </view>
+    </view>
+  </block>
+</template>

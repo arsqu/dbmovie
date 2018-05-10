@@ -1,0 +1,9 @@
+{
+  "window": {
+    "navigationBarBackgroundColor": "#05B512",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "影片短评",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}

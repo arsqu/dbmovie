@@ -1,0 +1,20 @@
+<import src="../common/list_item" />
+<import src="../common/loading" />
+
+<template is="loading_circle" wx:if="{{state.show}}" />
+
+<view class="pad">
+  <view class="talk_lists">
+    <view class="talk_item">
+      <view>
+        <!-- 短评  -->
+        <template is="{{state.types=='comments'?'short_talk':'long_talk'}}" data="{{detail,state}}" />
+      </view>
+
+    </view>
+    <view class="load_box">
+      <template is="item_load" data="{{state}}" />
+    </view>
+  </view>
+
+</view>

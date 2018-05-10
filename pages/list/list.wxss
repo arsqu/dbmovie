@@ -1,0 +1,118 @@
+/* pages/list/list.wxss */
+.hot_movies {
+  height: 450rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper .slide-image {
+  width: 100%;
+}
+
+.section_gap {
+  display: flex;
+  flex-direction: column;
+  margin: 40rpx 0;
+}
+
+.tit_sec{
+  display:flex;
+  align-items:center;
+  padding: 8rpx 10rpx;
+}
+
+.section__title {
+  display: inline-block;
+  flex:1;
+}
+
+.look_more{
+  margin-right:8px;
+}
+
+.scroll-view_H .scroll_list_1 {
+  display: flex;
+  flex-direction: row;
+  height: 300rpx;
+}
+
+.scroll-view_H {
+  height: 330rpx;
+}
+
+.nav_list {
+  float: flex;
+  font-size: 25rpx;
+  flex-direction: row;
+  padding: 10rpx;
+}
+
+.scroll-view-item_H {
+  width: 180rpx;
+  margin: 0 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-view-item_H .slide-image {
+  height: 250rpx;
+  margin-bottom:10rpx;
+}
+
+.scroll-view-item_H text {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size:22rpx;
+}
+
+.point_box{
+  text-align:center;
+}
+
+.movie_star{
+  font-size:15rpx;
+}
+
+.preview_tag{
+  padding:10rpx;
+  padding-right:0;
+}
+
+.type_view>text{
+  font-size:35rpx;
+}
+
+.tagList{
+  margin-top:35rpx;
+}
+
+.tagList>view{
+  color:#5BD05B;
+  padding:20rpx 0;
+  border-top:1rpx solid #eee;
+  border-right:1rpx solid #eee;
+  font-size:29rpx;
+  width:46%;
+  padding-left:25rpx;
+  display:inline-block;
+  cursor:pointer;
+  position:relative;
+}
+
+.tagList>view:nth-child(even){
+  padding-right:5rpx;
+  border-right:0;
+}
+
+.arr_rt{
+  width:25rpx;
+  height:25rpx;
+  position:absolute;
+  right:20rpx;
+  top:30rpx;
+}
