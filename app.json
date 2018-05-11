@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/detail/detail",
     "pages/splash/splash",
+    "pages/detail/detail",
     "pages/userInfo/userInfo",
     "pages/list/list",
     "pages/tagMov/tagMov",

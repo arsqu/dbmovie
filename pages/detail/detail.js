@@ -30,7 +30,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    options.id = 26683723; //测试用
+    // options.id = 26683723; //测试用
     if (options.id) {
       app.douban.getOne(options.id).then(res => {
         res.rating.average = res.rating.average || '';
